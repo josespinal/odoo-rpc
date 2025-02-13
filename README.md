@@ -1,5 +1,13 @@
 # Access Odoo via JSON-RPC and XML-RPC
 
+> **Note**: This package is a fork of [obuchmann/odoo-jsonrpc](https://github.com/obuchmann/odoo-jsonrpc) with several improvements:
+> - Added XML-RPC support alongside JSON-RPC
+> - Enhanced Laravel integration with proper service provider
+> - Added Laravel Collection support for search results
+> - Improved type safety and error handling
+> - Added convenient methods like `first()` for better developer experience
+> - Better PHP 8.0+ support
+
 Connect to odoo via the json-rpc or xml-rpc api. If you are in a laravel project, this package registers a provider. But laravel is not required for this package.
 
 ## Installation
