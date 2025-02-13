@@ -18,6 +18,9 @@ class XmlRpcClient extends AbstractRpcClient
         parent::__construct($baseUri, $service, $sslVerify);
         $this->xmlRpcClient = new Client($baseUri . '/xmlrpc/2/' . $service);
         $this->xmlRpcClient->setSSLVerifyPeer($sslVerify);
+        // Force POST method and set proper content type
+        $this->xmlRpcClient->setOption(CURLOPT_POST, 1);
+        $this->xmlRpcClient->setOption(CURLOPT_HTTPHEADER, ['Content-Type: text/xml']);
     }
 
     public function call(string $method, array $arguments)
@@ -40,7 +43,20 @@ class XmlRpcClient extends AbstractRpcClient
 
             return $this->convertFromXmlRpcValue($response->value());
         } catch (\Exception $e) {
-            throw new OdooException(null, $e->getMessage(), $e->getCode(), $e);
+            if ($e instanceof GuzzleException && $e->getCode() === 405) {
+                throw new OdooException(
+                    null,
+                    "XML-RPC endpoint not available. Please check if the Odoo server accepts XML-RPC connections and the endpoint URL is correct.",
+                    405,
+                    $e
+                );
+            }
+            throw new OdooException(
+                null,
+                "XML-RPC call failed: " . $e->getMessage(),
+                $e->getCode(),
+                $e
+            );
         }
     }
 
