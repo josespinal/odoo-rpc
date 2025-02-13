@@ -18,9 +18,11 @@ class XmlRpcClient extends AbstractRpcClient
         parent::__construct($baseUri, $service, $sslVerify);
         $this->xmlRpcClient = new Client($baseUri . '/xmlrpc/2/' . $service);
         $this->xmlRpcClient->setSSLVerifyPeer($sslVerify);
-        // Force POST method and set proper content type
-        $this->xmlRpcClient->setOption(CURLOPT_POST, 1);
-        $this->xmlRpcClient->setOption(CURLOPT_HTTPHEADER, ['Content-Type: text/xml']);
+        
+        // Configure client for XML-RPC
+        // Disable compression as it's not needed for most Odoo servers
+        $this->xmlRpcClient->setAcceptedCompression(null);
+        $this->xmlRpcClient->setRequestCompression(null);
     }
 
     public function call(string $method, array $arguments)
