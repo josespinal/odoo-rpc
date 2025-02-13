@@ -7,14 +7,17 @@ namespace Obuchmann\OdooJsonRpc\Odoo\Endpoint;
 use Obuchmann\OdooJsonRpc\Exceptions\AuthenticationException;
 use Obuchmann\OdooJsonRpc\Odoo\Models\Version;
 
-class CommonEndpoint extends Endpoint
+class CommonEndpoint extends AbstractEndpoint
 {
 
-    protected string $service = 'common';
+    protected function getService(): string
+    {
+        return 'common';
+    }
 
     public function authenticate(): int
     {
-        $client = $this->getClient(true);
+        $client = $this->client;
         $uid = $client
             ->authenticate(
                 $this->getConfig()->getDatabase(),
@@ -33,8 +36,7 @@ class CommonEndpoint extends Endpoint
     public function version(): Version
     {
         return Version::hydrate(
-            $this->getClient()
-                ->version()
+            $this->client->call('version', [])
         );
     }
 }

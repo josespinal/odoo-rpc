@@ -19,6 +19,24 @@ php artisan vendor:publish --provider="Obuchmann\OdooJsonRpc\OdooServiceProvider
 
 ## Usage
 
+### Protocol Selection
+
+This package supports both JSON-RPC and XML-RPC protocols. You can specify which protocol to use in your configuration:
+
+```php
+// In your .env file
+ODOO_PROTOCOL=json-rpc  # or xml-rpc
+
+// Or in your code
+$config = new Config(
+    database: 'odoo',
+    host: 'http://localhost:8069',
+    username: 'admin',
+    password: 'password',
+    protocol: 'xml-rpc'  // or 'json-rpc'
+);
+```
+
 ### Basic Usage
 
 ```php
