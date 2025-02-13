@@ -1,10 +1,9 @@
 <?php
 
-
 namespace JoseSpinal\OdooRpc\Odoo\Models;
 
-
 use JetBrains\PhpStorm\ExpectedValues;
+use JoseSpinal\OdooRpc\Odoo\Collections\OdooCollection;
 use JoseSpinal\OdooRpc\Odoo\OdooModel;
 use JoseSpinal\OdooRpc\Odoo\Request\RequestBuilder;
 
@@ -31,9 +30,10 @@ class ModelQuery
         return $this->builder->can($permission);
     }
 
-    public function get(): array
+    public function get(): OdooCollection
     {
-        return array_map(fn($item) => $this->newInstance($item), $this->builder->get());
+        $items = array_map(fn($item) => $this->newInstance($item), $this->builder->get());
+        return new OdooCollection($items);
     }
 
     public function first(): ?OdooModel

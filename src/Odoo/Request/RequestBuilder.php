@@ -68,10 +68,11 @@ class RequestBuilder
         return collect($this->get());
     }
 
-    public function first(): ?object
+    public function first(): ?array
     {
         $this->limit = 1;
-        return $this->get()[0] ?? null;
+        $results = $this->get();
+        return !empty($results) ? (array)$results[0] : null;
     }
 
     public function ids(): array
