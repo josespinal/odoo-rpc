@@ -1,19 +1,21 @@
 {
-    "name": "obuchmann/odoo-jsonrpc",
-    "description": "PHP Odoo Json-RPC connector, prepared for laravel integration",
+    "name": "josespinal/odoo-rpc",
+    "description": "PHP Odoo RPC connector with JSON-RPC and XML-RPC support, prepared for Laravel integration",
     "keywords": [
         "php",
         "odoo",
         "jsonrpc",
-        "laravel"
+        "xmlrpc",
+        "laravel",
+        "erp"
     ],
-    "homepage": "https://github.com/obuchmann/odoo-jsonrpc",
+    "homepage": "https://github.com/josespinal/odoo-rpc",
     "license": "MIT",
     "type": "library",
     "authors": [
         {
-            "name": "Oliver Buchmann",
-            "email": "o.buchmann@pc-web.at"
+            "name": "Jose Espinal",
+            "email": "your.email@example.com"
         }
     ],
     "require": {
