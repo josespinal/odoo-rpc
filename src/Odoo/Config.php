@@ -14,6 +14,7 @@ class Config
         protected string $host,
         protected string $username,
         protected string $password,
+        protected string $protocol = 'json-rpc',
         protected bool $sslVerify = true
     ) {}
 
@@ -55,5 +56,13 @@ class Config
     public function getSslVerify(): bool
     {
         return $this->sslVerify;
+    }
+
+    /**
+     * @return string
+     */
+    public function getProtocol(): string
+    {
+        return $this->protocol;
     }
 }

@@ -20,9 +20,12 @@ use Obuchmann\OdooJsonRpc\Odoo\Request\SearchRead;
 use Obuchmann\OdooJsonRpc\Odoo\Request\Unlink;
 use Obuchmann\OdooJsonRpc\Odoo\Request\Write;
 
-class ObjectEndpoint extends Endpoint
+class ObjectEndpoint extends AbstractEndpoint
 {
-    protected string $service = 'object';
+    protected function getService(): string
+    {
+        return 'object';
+    }
 
     /**
      * ObjectEndpoint constructor.
@@ -49,7 +52,7 @@ class ObjectEndpoint extends Endpoint
         $options ??= new Options();
 
         $value = $request->execute(
-            client: $this->getClient(),
+            client: $this->client,
             database: $this->getConfig()->getDatabase(),
             uid: $this->uid,
             password: $this->getConfig()->getPassword(),

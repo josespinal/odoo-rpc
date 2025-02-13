@@ -42,6 +42,7 @@ class OdooServiceProvider extends ServiceProvider
                 host: config('odoo.host', ''),
                 username: config('odoo.username', ''),
                 password: config('odoo.password', ''),
+                protocol: config('odoo.protocol', 'json-rpc'),
                 sslVerify: config('odoo.ssl_verify',true)
             ), new Context(
                 lang: config('odoo.context.lang'),
