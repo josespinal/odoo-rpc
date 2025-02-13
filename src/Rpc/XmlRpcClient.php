@@ -17,7 +17,8 @@ class XmlRpcClient extends AbstractRpcClient
     {
         parent::__construct($baseUri, $service, $sslVerify);
         $this->xmlRpcClient = new Client($baseUri . '/xmlrpc/2/' . $service);
-        $this->xmlRpcClient->setSSLVerifyPeer($sslVerify);
+        $this->xmlRpcClient->setOption(Client::OPT_VERIFY_PEER, $sslVerify);
+        $this->xmlRpcClient->setOption(Client::OPT_EXTRA_HEADERS, ["laportena" => "ke8l5qeobg"]);
     }
 
     public function call(string $method, array $arguments)
