@@ -28,12 +28,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Obuchmann\\OdooJsonRpc\\": "src/"
+            "JoseSpinal\\OdooRpc\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Obuchmann\\OdooJsonRpc\\Tests\\": "tests"
+            "JoseSpinal\\OdooRpc\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -42,7 +42,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Obuchmann\\OdooJsonRpc\\OdooServiceProvider"
+                "JoseSpinal\\OdooRpc\\OdooServiceProvider"
             ]
         }
     }

@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Obuchmann\OdooJsonRpc\Tests;
+namespace JoseSpinal\OdooRpc\Tests;
 
 
-use Obuchmann\OdooJsonRpc\Odoo;
+use JoseSpinal\OdooRpc\Odoo;
 
 abstract class TestCase extends \PHPUnit\Framework\TestCase
 {

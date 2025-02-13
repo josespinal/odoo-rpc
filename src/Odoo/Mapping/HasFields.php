@@ -1,15 +1,15 @@
 <?php
 
 
-namespace Obuchmann\OdooJsonRpc\Odoo\Mapping;
+namespace JoseSpinal\OdooRpc\Odoo\Mapping;
 
 
-use Obuchmann\OdooJsonRpc\Attributes\Field;
-use Obuchmann\OdooJsonRpc\Attributes\HasMany;
-use Obuchmann\OdooJsonRpc\Attributes\Key;
-use Obuchmann\OdooJsonRpc\Attributes\KeyName;
-use Obuchmann\OdooJsonRpc\Odoo\Casts\CastHandler;
-use Obuchmann\OdooJsonRpc\Odoo\OdooModel;
+use JoseSpinal\OdooRpc\Attributes\Field;
+use JoseSpinal\OdooRpc\Attributes\HasMany;
+use JoseSpinal\OdooRpc\Attributes\Key;
+use JoseSpinal\OdooRpc\Attributes\KeyName;
+use JoseSpinal\OdooRpc\Odoo\Casts\CastHandler;
+use JoseSpinal\OdooRpc\Odoo\OdooModel;
 use stdClass;
 
 trait HasFields

@@ -1,9 +1,9 @@
 <?php
 
 
-namespace Obuchmann\OdooJsonRpc\Odoo\Request;
-use Obuchmann\OdooJsonRpc\JsonRpc\Client;
-use Obuchmann\OdooJsonRpc\Odoo\Request\Arguments\Domain;
+namespace JoseSpinal\OdooRpc\Odoo\Request;
+use JoseSpinal\OdooRpc\JsonRpc\Client;
+use JoseSpinal\OdooRpc\Odoo\Request\Arguments\Domain;
 
 /**
  * Class SearchRead

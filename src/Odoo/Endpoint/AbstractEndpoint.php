@@ -1,10 +1,10 @@
 <?php
 
-namespace Obuchmann\OdooJsonRpc\Odoo\Endpoint;
+namespace JoseSpinal\OdooRpc\Odoo\Endpoint;
 
-use Obuchmann\OdooJsonRpc\Contracts\RpcClientInterface;
-use Obuchmann\OdooJsonRpc\Odoo\Config;
-use Obuchmann\OdooJsonRpc\Rpc\RpcClientFactory;
+use JoseSpinal\OdooRpc\Contracts\RpcClientInterface;
+use JoseSpinal\OdooRpc\Odoo\Config;
+use JoseSpinal\OdooRpc\Rpc\RpcClientFactory;
 
 abstract class AbstractEndpoint
 {

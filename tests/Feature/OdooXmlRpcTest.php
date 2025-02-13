@@ -1,10 +1,10 @@
 <?php
 
-namespace Obuchmann\OdooJsonRpc\Tests\Feature;
+namespace JoseSpinal\OdooRpc\Tests\Feature;
 
-use Obuchmann\OdooJsonRpc\Odoo;
-use Obuchmann\OdooJsonRpc\Odoo\Config;
-use Obuchmann\OdooJsonRpc\Odoo\Context;
+use JoseSpinal\OdooRpc\Odoo;
+use JoseSpinal\OdooRpc\Odoo\Config;
+use JoseSpinal\OdooRpc\Odoo\Context;
 use PHPUnit\Framework\TestCase;
 
 class OdooXmlRpcTest extends TestCase

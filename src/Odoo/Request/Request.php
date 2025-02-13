@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Obuchmann\OdooJsonRpc\Odoo\Request;
+namespace JoseSpinal\OdooRpc\Odoo\Request;
 
-use Obuchmann\OdooJsonRpc\JsonRpc\Client;
-use Obuchmann\OdooJsonRpc\Odoo\Request\Arguments\Options;
+use JoseSpinal\OdooRpc\JsonRpc\Client;
+use JoseSpinal\OdooRpc\Odoo\Request\Arguments\Options;
 
 abstract class Request
 {

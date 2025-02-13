@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Obuchmann\OdooJsonRpc\Exceptions;
+namespace JoseSpinal\OdooRpc\Exceptions;
 use JetBrains\PhpStorm\Pure;
 use Psr\Http\Message\ResponseInterface;
 use RuntimeException;

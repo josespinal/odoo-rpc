@@ -1,12 +1,12 @@
 <?php
 
 
-namespace Obuchmann\OdooJsonRpc;
+namespace JoseSpinal\OdooRpc;
 
 use Illuminate\Support\ServiceProvider;
-use Obuchmann\OdooJsonRpc\Odoo\Config;
-use Obuchmann\OdooJsonRpc\Odoo\Context;
-use Obuchmann\OdooJsonRpc\Odoo\OdooModel;
+use JoseSpinal\OdooRpc\Odoo\Config;
+use JoseSpinal\OdooRpc\Odoo\Context;
+use JoseSpinal\OdooRpc\Odoo\OdooModel;
 
 
 class OdooServiceProvider extends ServiceProvider

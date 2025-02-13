@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Obuchmann\OdooJsonRpc\Attributes;
+namespace JoseSpinal\OdooRpc\Attributes;
 
 use Attribute;
 

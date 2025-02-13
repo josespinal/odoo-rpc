@@ -1,24 +1,24 @@
 <?php
 
 
-namespace Obuchmann\OdooJsonRpc\Odoo\Endpoint;
+namespace JoseSpinal\OdooRpc\Odoo\Endpoint;
 
 
-use Obuchmann\OdooJsonRpc\Odoo\Config;
-use Obuchmann\OdooJsonRpc\Odoo\Context;
-use Obuchmann\OdooJsonRpc\Odoo\Request\Arguments\Domain;
-use Obuchmann\OdooJsonRpc\Odoo\Request\Arguments\Options;
-use Obuchmann\OdooJsonRpc\Odoo\Request\CheckAccessRights;
-use Obuchmann\OdooJsonRpc\Odoo\Request\Create;
-use Obuchmann\OdooJsonRpc\Odoo\Request\FieldsGet;
-use Obuchmann\OdooJsonRpc\Odoo\Request\Read;
-use Obuchmann\OdooJsonRpc\Odoo\Request\ReadGroup;
-use Obuchmann\OdooJsonRpc\Odoo\Request\Request;
-use Obuchmann\OdooJsonRpc\Odoo\Request\RequestBuilder;
-use Obuchmann\OdooJsonRpc\Odoo\Request\Search;
-use Obuchmann\OdooJsonRpc\Odoo\Request\SearchRead;
-use Obuchmann\OdooJsonRpc\Odoo\Request\Unlink;
-use Obuchmann\OdooJsonRpc\Odoo\Request\Write;
+use JoseSpinal\OdooRpc\Odoo\Config;
+use JoseSpinal\OdooRpc\Odoo\Context;
+use JoseSpinal\OdooRpc\Odoo\Request\Arguments\Domain;
+use JoseSpinal\OdooRpc\Odoo\Request\Arguments\Options;
+use JoseSpinal\OdooRpc\Odoo\Request\CheckAccessRights;
+use JoseSpinal\OdooRpc\Odoo\Request\Create;
+use JoseSpinal\OdooRpc\Odoo\Request\FieldsGet;
+use JoseSpinal\OdooRpc\Odoo\Request\Read;
+use JoseSpinal\OdooRpc\Odoo\Request\ReadGroup;
+use JoseSpinal\OdooRpc\Odoo\Request\Request;
+use JoseSpinal\OdooRpc\Odoo\Request\RequestBuilder;
+use JoseSpinal\OdooRpc\Odoo\Request\Search;
+use JoseSpinal\OdooRpc\Odoo\Request\SearchRead;
+use JoseSpinal\OdooRpc\Odoo\Request\Unlink;
+use JoseSpinal\OdooRpc\Odoo\Request\Write;
 
 class ObjectEndpoint extends AbstractEndpoint
 {

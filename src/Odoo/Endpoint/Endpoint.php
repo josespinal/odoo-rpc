@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Obuchmann\OdooJsonRpc\Odoo\Endpoint;
+namespace JoseSpinal\OdooRpc\Odoo\Endpoint;
 
 
-use Obuchmann\OdooJsonRpc\JsonRpc\Client;
-use Obuchmann\OdooJsonRpc\Odoo\Config;
+use JoseSpinal\OdooRpc\JsonRpc\Client;
+use JoseSpinal\OdooRpc\Odoo\Config;
 
 class Endpoint
 {

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Obuchmann\OdooJsonRpc\Exceptions;
+namespace JoseSpinal\OdooRpc\Exceptions;
 
 
 class UndefinedPropertyException extends OdooModelException

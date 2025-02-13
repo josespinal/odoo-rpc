@@ -1,13 +1,13 @@
 <?php
 
 
-namespace Obuchmann\OdooJsonRpc\Tests\Models;
+namespace JoseSpinal\OdooRpc\Tests\Models;
 
-use Obuchmann\OdooJsonRpc\Attributes\Field;
-use Obuchmann\OdooJsonRpc\Attributes\HasMany;
-use Obuchmann\OdooJsonRpc\Attributes\Key;
-use Obuchmann\OdooJsonRpc\Attributes\Model;
-use Obuchmann\OdooJsonRpc\Odoo\OdooModel;
+use JoseSpinal\OdooRpc\Attributes\Field;
+use JoseSpinal\OdooRpc\Attributes\HasMany;
+use JoseSpinal\OdooRpc\Attributes\Key;
+use JoseSpinal\OdooRpc\Attributes\Model;
+use JoseSpinal\OdooRpc\Odoo\OdooModel;
 
 #[Model('purchase.order')]
 class PurchaseOrder extends OdooModel

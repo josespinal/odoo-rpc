@@ -1,12 +1,12 @@
 <?php
 
 
-namespace Obuchmann\OdooJsonRpc\Odoo\Models;
+namespace JoseSpinal\OdooRpc\Odoo\Models;
 
 
 use JetBrains\PhpStorm\ExpectedValues;
-use Obuchmann\OdooJsonRpc\Odoo\OdooModel;
-use Obuchmann\OdooJsonRpc\Odoo\Request\RequestBuilder;
+use JoseSpinal\OdooRpc\Odoo\OdooModel;
+use JoseSpinal\OdooRpc\Odoo\Request\RequestBuilder;
 
 class ModelQuery
 {

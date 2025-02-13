@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Obuchmann\OdooJsonRpc\Odoo\Endpoint;
+namespace JoseSpinal\OdooRpc\Odoo\Endpoint;
 
 
-use Obuchmann\OdooJsonRpc\Exceptions\AuthenticationException;
-use Obuchmann\OdooJsonRpc\Odoo\Models\Version;
+use JoseSpinal\OdooRpc\Exceptions\AuthenticationException;
+use JoseSpinal\OdooRpc\Odoo\Models\Version;
 
 class CommonEndpoint extends AbstractEndpoint
 {
