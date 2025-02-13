@@ -1,6 +1,6 @@
-# Access Odoo via JsonRPC
+# Access Odoo via JsonRPC or XML-RPC
 
-Connect to odoo via the json-rpc api. If you are in a laravel project, this package registers a provider. But laravel is not required for this package.
+Connect to odoo via the json-rpc or xml-rpc api. If you are in a laravel project, this package registers a provider. But laravel is not required for this package.
 
 ## Installation
 
