@@ -1,9 +1,8 @@
 <?php
 
-
 namespace JoseSpinal\OdooRpc\Odoo\Request;
 
-use JoseSpinal\OdooRpc\JsonRpc\Client;
+use JoseSpinal\OdooRpc\Contracts\RpcClientInterface;
 use JoseSpinal\OdooRpc\Odoo\Request\Arguments\Options;
 
 abstract class Request
@@ -23,13 +22,21 @@ abstract class Request
     public abstract function toArray(): array;
 
     public function execute(
-        Client $client,
+        RpcClientInterface $client,
         string $database,
         int $uid,
         string $password,
         Options $options
     )
     {
-        return $client->execute_kw($database, $uid, $password, $this->model, $this->method, $this->toArray(), $options->toArray());
+        return $client->call('execute_kw', [
+            $database,
+            $uid,
+            $password,
+            $this->model,
+            $this->method,
+            $this->toArray(),
+            $options->toArray()
+        ]);
     }
 }
