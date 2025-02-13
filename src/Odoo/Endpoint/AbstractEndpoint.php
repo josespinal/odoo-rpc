@@ -20,5 +20,10 @@ abstract class AbstractEndpoint
         );
     }
 
+    protected function getConfig(): Config
+    {
+        return $this->config;
+    }
+
     abstract protected function getService(): string;
 }

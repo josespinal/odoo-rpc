@@ -23,27 +23,24 @@ class JsonRpcClient extends AbstractRpcClient
     public function call(string $method, array $arguments)
     {
         try {
-            $response = $this->client->request('POST', 'jsonrpc', [
+            $response = $this->client->request('POST', '/jsonrpc/2/' . $this->service, [
                 'json' => [
                     'jsonrpc' => '2.0',
-                    'method' => 'call',
-                    'params' => [
-                        'service' => $this->service,
-                        'method' => $method,
-                        'args' => $arguments
-                    ],
+                    'method' => $method,
+                    'params' => $arguments,
                     'id' => rand(0, 1000000000)
                 ]
             ]);
+            $this->lastResponse = $response;
+
+            if ($response->getStatusCode() !== 200) {
+                throw new OdooException($response);
+            }
+
+            return $this->makeResponse($response);
         } catch (GuzzleException $e) {
             throw new OdooException(null, $e->getMessage(), $e->getCode(), $e);
         }
-        $this->lastResponse = $response;
-
-        return match($response->getStatusCode()) {
-            200 => $this->makeResponse($response),
-            default => throw new OdooException($response)
-        };
     }
 
     protected function makeResponse(ResponseInterface $response)

@@ -17,19 +17,18 @@ class CommonEndpoint extends AbstractEndpoint
 
     public function authenticate(): int
     {
-        $client = $this->client;
-        $uid = $client
-            ->authenticate(
-                $this->getConfig()->getDatabase(),
-                $this->getConfig()->getUsername(),
-                $this->getConfig()->getPassword(),
-                ['empty' => 'false']
-            );
-        if ($uid > 0) {
-            return $uid;
+        $uid = $this->client->call('authenticate', [
+            $this->getConfig()->getDatabase(),
+            $this->getConfig()->getUsername(),
+            $this->getConfig()->getPassword(),
+            ['empty' => 'false']
+        ]);
+
+        if ($uid && (int)$uid > 0) {
+            return (int)$uid;
         }
 
-        throw new AuthenticationException($client->lastResponse(), "Authentication failed!");
+        throw new AuthenticationException($this->client->getLastResponse(), "Authentication failed!");
     }
 
 

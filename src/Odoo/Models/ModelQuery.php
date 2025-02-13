@@ -17,8 +17,11 @@ class ModelQuery
     {
     }
 
-    private function newInstance(object $values): OdooModel
+    private function newInstance(array|object $values): OdooModel
     {
+        if (is_array($values)) {
+            $values = (object)$values;
+        }
         return $this->model->hydrate($values);
     }
 
