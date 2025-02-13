@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Obuchmann\OdooJsonRpc\Odoo\Request;
+namespace JoseSpinal\OdooRpc\Odoo\Request;
 
 class Read extends Request
 {

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Obuchmann\OdooJsonRpc\Exceptions;
+namespace JoseSpinal\OdooRpc\Exceptions;
 
 
 class AuthenticationException extends OdooException

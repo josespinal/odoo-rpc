@@ -1,9 +1,9 @@
 <?php
 
-namespace Obuchmann\OdooJsonRpc\Rpc;
+namespace JoseSpinal\OdooRpc\Rpc;
 
 use InvalidArgumentException;
-use Obuchmann\OdooJsonRpc\Contracts\RpcClientInterface;
+use JoseSpinal\OdooRpc\Contracts\RpcClientInterface;
 
 class RpcClientFactory
 {

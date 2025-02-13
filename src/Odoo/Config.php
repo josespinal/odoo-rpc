@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Obuchmann\OdooJsonRpc\Odoo;
+namespace JoseSpinal\OdooRpc\Odoo;
 
 use JetBrains\PhpStorm\Immutable;
 

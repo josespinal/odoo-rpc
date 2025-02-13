@@ -1,11 +1,11 @@
 <?php
 
-namespace Obuchmann\OdooJsonRpc\Tests;
+namespace JoseSpinal\OdooRpc\Tests;
 
-use Obuchmann\OdooJsonRpc\Exceptions\AuthenticationException;
-use Obuchmann\OdooJsonRpc\Odoo;
-use Obuchmann\OdooJsonRpc\Odoo\Request\Arguments\Domain;
-use Obuchmann\OdooJsonRpc\Odoo\Request\Arguments\Options;
+use JoseSpinal\OdooRpc\Exceptions\AuthenticationException;
+use JoseSpinal\OdooRpc\Odoo;
+use JoseSpinal\OdooRpc\Odoo\Request\Arguments\Domain;
+use JoseSpinal\OdooRpc\Odoo\Request\Arguments\Options;
 
 class OdooTest extends TestCase
 {

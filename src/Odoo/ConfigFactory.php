@@ -3,8 +3,8 @@
 
 namespace Obuchmann\LaravelOdooApi\Odoo;
 
-use Obuchmann\OdooJsonRpc\Exceptions\ConfigurationException;
-use Obuchmann\OdooJsonRpc\Odoo\Config;
+use JoseSpinal\OdooRpc\Exceptions\ConfigurationException;
+use JoseSpinal\OdooRpc\Odoo\Config;
 
 class ConfigFactory
 {

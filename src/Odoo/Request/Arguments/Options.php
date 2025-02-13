@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Obuchmann\OdooJsonRpc\Odoo\Request\Arguments;
+namespace JoseSpinal\OdooRpc\Odoo\Request\Arguments;
 
 
-use Obuchmann\OdooJsonRpc\Odoo\Context;
+use JoseSpinal\OdooRpc\Odoo\Context;
 
 class Options
 {

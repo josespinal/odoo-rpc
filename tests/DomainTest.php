@@ -1,8 +1,8 @@
 <?php
 
-namespace Obuchmann\OdooJsonRpc\Tests;
+namespace JoseSpinal\OdooRpc\Tests;
 
-use Obuchmann\OdooJsonRpc\Odoo\Request\Arguments\Domain;
+use JoseSpinal\OdooRpc\Odoo\Request\Arguments\Domain;
 use PHPUnit\Framework\TestCase;
 
 class DomainTest extends TestCase

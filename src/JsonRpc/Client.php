@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Obuchmann\OdooJsonRpc\JsonRpc;
+namespace JoseSpinal\OdooRpc\JsonRpc;
 
 
 use GuzzleHttp\Exception\GuzzleException;
-use Obuchmann\OdooJsonRpc\Exceptions\OdooException;
+use JoseSpinal\OdooRpc\Exceptions\OdooException;
 use Psr\Http\Message\ResponseInterface;
 
 class Client

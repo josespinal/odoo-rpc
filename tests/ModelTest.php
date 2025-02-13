@@ -1,15 +1,15 @@
 <?php
 
 
-namespace Obuchmann\OdooJsonRpc\Tests;
+namespace JoseSpinal\OdooRpc\Tests;
 
 
-use Obuchmann\OdooJsonRpc\Odoo;
-use Obuchmann\OdooJsonRpc\Odoo\Casts\CastHandler;
-use Obuchmann\OdooJsonRpc\Odoo\OdooModel;
-use Obuchmann\OdooJsonRpc\Tests\Models\Partner;
-use Obuchmann\OdooJsonRpc\Tests\Models\PurchaseOrder;
-use Obuchmann\OdooJsonRpc\Tests\Models\PurchaseOrderLine;
+use JoseSpinal\OdooRpc\Odoo;
+use JoseSpinal\OdooRpc\Odoo\Casts\CastHandler;
+use JoseSpinal\OdooRpc\Odoo\OdooModel;
+use JoseSpinal\OdooRpc\Tests\Models\Partner;
+use JoseSpinal\OdooRpc\Tests\Models\PurchaseOrder;
+use JoseSpinal\OdooRpc\Tests\Models\PurchaseOrderLine;
 
 class ModelTest extends TestCase
 {

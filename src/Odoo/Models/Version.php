@@ -1,12 +1,12 @@
 <?php
 
 
-namespace Obuchmann\OdooJsonRpc\Odoo\Models;
+namespace JoseSpinal\OdooRpc\Odoo\Models;
 
 
 use JetBrains\PhpStorm\Immutable;
-use Obuchmann\OdooJsonRpc\Attributes\Field;
-use Obuchmann\OdooJsonRpc\Odoo\Mapping\HasFields;
+use JoseSpinal\OdooRpc\Attributes\Field;
+use JoseSpinal\OdooRpc\Odoo\Mapping\HasFields;
 
 class Version
 {

@@ -1,15 +1,15 @@
 <?php
 
 
-namespace Obuchmann\OdooJsonRpc\Odoo;
+namespace JoseSpinal\OdooRpc\Odoo;
 
 
-use Obuchmann\OdooJsonRpc\Attributes\Model;
-use Obuchmann\OdooJsonRpc\Exceptions\ConfigurationException;
-use Obuchmann\OdooJsonRpc\Exceptions\OdooModelException;
-use Obuchmann\OdooJsonRpc\Exceptions\UndefinedPropertyException;
-use Obuchmann\OdooJsonRpc\Odoo;
-use Obuchmann\OdooJsonRpc\Odoo\Mapping\HasFields;
+use JoseSpinal\OdooRpc\Attributes\Model;
+use JoseSpinal\OdooRpc\Exceptions\ConfigurationException;
+use JoseSpinal\OdooRpc\Exceptions\OdooModelException;
+use JoseSpinal\OdooRpc\Exceptions\UndefinedPropertyException;
+use JoseSpinal\OdooRpc\Odoo;
+use JoseSpinal\OdooRpc\Odoo\Mapping\HasFields;
 
 class OdooModel
 {

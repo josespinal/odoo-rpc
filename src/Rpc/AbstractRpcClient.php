@@ -1,9 +1,9 @@
 <?php
 
-namespace Obuchmann\OdooJsonRpc\Rpc;
+namespace JoseSpinal\OdooRpc\Rpc;
 
 use GuzzleHttp\Client as HttpClient;
-use Obuchmann\OdooJsonRpc\Contracts\RpcClientInterface;
+use JoseSpinal\OdooRpc\Contracts\RpcClientInterface;
 use Psr\Http\Message\ResponseInterface;
 
 abstract class AbstractRpcClient implements RpcClientInterface

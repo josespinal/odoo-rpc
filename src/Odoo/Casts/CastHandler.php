@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Obuchmann\OdooJsonRpc\Odoo\Casts;
+namespace JoseSpinal\OdooRpc\Odoo\Casts;
 
 
 class CastHandler

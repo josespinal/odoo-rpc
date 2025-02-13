@@ -1,6 +1,6 @@
 <?php
 
-namespace Obuchmann\OdooJsonRpc\Odoo\Request\Arguments;
+namespace JoseSpinal\OdooRpc\Odoo\Request\Arguments;
 
 trait HasGroupBy
 {

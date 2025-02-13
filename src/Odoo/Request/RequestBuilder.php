@@ -1,19 +1,19 @@
 <?php
 
 
-namespace Obuchmann\OdooJsonRpc\Odoo\Request;
+namespace JoseSpinal\OdooRpc\Odoo\Request;
 
-use Obuchmann\OdooJsonRpc\Exceptions\ConfigurationException;
-use Obuchmann\OdooJsonRpc\Odoo\Endpoint\ObjectEndpoint;
-use Obuchmann\OdooJsonRpc\Odoo\Request\Arguments\Domain;
-use Obuchmann\OdooJsonRpc\Odoo\Request\Arguments\HasDomain;
-use Obuchmann\OdooJsonRpc\Odoo\Request\Arguments\HasFields;
-use Obuchmann\OdooJsonRpc\Odoo\Request\Arguments\HasGroupBy;
-use Obuchmann\OdooJsonRpc\Odoo\Request\Arguments\HasLimit;
-use Obuchmann\OdooJsonRpc\Odoo\Request\Arguments\HasOffset;
-use Obuchmann\OdooJsonRpc\Odoo\Request\Arguments\HasOptions;
-use Obuchmann\OdooJsonRpc\Odoo\Request\Arguments\HasOrder;
-use Obuchmann\OdooJsonRpc\Odoo\Request\Arguments\Options;
+use JoseSpinal\OdooRpc\Exceptions\ConfigurationException;
+use JoseSpinal\OdooRpc\Odoo\Endpoint\ObjectEndpoint;
+use JoseSpinal\OdooRpc\Odoo\Request\Arguments\Domain;
+use JoseSpinal\OdooRpc\Odoo\Request\Arguments\HasDomain;
+use JoseSpinal\OdooRpc\Odoo\Request\Arguments\HasFields;
+use JoseSpinal\OdooRpc\Odoo\Request\Arguments\HasGroupBy;
+use JoseSpinal\OdooRpc\Odoo\Request\Arguments\HasLimit;
+use JoseSpinal\OdooRpc\Odoo\Request\Arguments\HasOffset;
+use JoseSpinal\OdooRpc\Odoo\Request\Arguments\HasOptions;
+use JoseSpinal\OdooRpc\Odoo\Request\Arguments\HasOrder;
+use JoseSpinal\OdooRpc\Odoo\Request\Arguments\Options;
 
 class RequestBuilder
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Obuchmann\OdooJsonRpc\Contracts;
+namespace JoseSpinal\OdooRpc\Contracts;
 
 use Psr\Http\Message\ResponseInterface;
 

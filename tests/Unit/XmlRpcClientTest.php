@@ -1,8 +1,8 @@
 <?php
 
-namespace Obuchmann\OdooJsonRpc\Tests\Unit;
+namespace JoseSpinal\OdooRpc\Tests\Unit;
 
-use Obuchmann\OdooJsonRpc\Rpc\XmlRpcClient;
+use JoseSpinal\OdooRpc\Rpc\XmlRpcClient;
 use PHPUnit\Framework\TestCase;
 
 class XmlRpcClientTest extends TestCase

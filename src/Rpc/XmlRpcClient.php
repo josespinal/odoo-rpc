@@ -1,9 +1,9 @@
 <?php
 
-namespace Obuchmann\OdooJsonRpc\Rpc;
+namespace JoseSpinal\OdooRpc\Rpc;
 
 use GuzzleHttp\Exception\GuzzleException;
-use Obuchmann\OdooJsonRpc\Exceptions\OdooException;
+use JoseSpinal\OdooRpc\Exceptions\OdooException;
 use PhpXmlRpc\Client;
 use PhpXmlRpc\Request;
 use PhpXmlRpc\Value;

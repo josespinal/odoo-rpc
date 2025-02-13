@@ -1,19 +1,19 @@
 <?php
 
 
-namespace Obuchmann\OdooJsonRpc;
+namespace JoseSpinal\OdooRpc;
 
 
-use Obuchmann\OdooJsonRpc\Odoo\Casts\Cast;
-use Obuchmann\OdooJsonRpc\Odoo\Casts\CastHandler;
-use Obuchmann\OdooJsonRpc\Odoo\Config;
-use Obuchmann\OdooJsonRpc\Odoo\Context;
-use Obuchmann\OdooJsonRpc\Odoo\Endpoint\CommonEndpoint;
-use Obuchmann\OdooJsonRpc\Odoo\Endpoint\ObjectEndpoint;
-use Obuchmann\OdooJsonRpc\Odoo\Models\Version;
-use Obuchmann\OdooJsonRpc\Odoo\Request\Arguments\Domain;
-use Obuchmann\OdooJsonRpc\Odoo\Request\Arguments\Options;
-use Obuchmann\OdooJsonRpc\Odoo\Request\Request;
+use JoseSpinal\OdooRpc\Odoo\Casts\Cast;
+use JoseSpinal\OdooRpc\Odoo\Casts\CastHandler;
+use JoseSpinal\OdooRpc\Odoo\Config;
+use JoseSpinal\OdooRpc\Odoo\Context;
+use JoseSpinal\OdooRpc\Odoo\Endpoint\CommonEndpoint;
+use JoseSpinal\OdooRpc\Odoo\Endpoint\ObjectEndpoint;
+use JoseSpinal\OdooRpc\Odoo\Models\Version;
+use JoseSpinal\OdooRpc\Odoo\Request\Arguments\Domain;
+use JoseSpinal\OdooRpc\Odoo\Request\Arguments\Options;
+use JoseSpinal\OdooRpc\Odoo\Request\Request;
 
 class Odoo
 {
