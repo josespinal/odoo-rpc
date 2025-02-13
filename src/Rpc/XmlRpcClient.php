@@ -12,23 +12,57 @@ use Psr\Http\Message\ResponseInterface;
 class XmlRpcClient extends AbstractRpcClient
 {
     private Client $xmlRpcClient;
+    private array $customHeaders = [];
+    private array $transportOptions = [];
 
-    public function __construct(string $baseUri, string $service = 'object', bool $sslVerify = true)
-    {
+    public function __construct(
+        string $baseUri,
+        string $service = 'object',
+        bool $sslVerify = true,
+        array $headers = [],
+        array $options = []
+    ) {
         parent::__construct($baseUri, $service, $sslVerify);
+        
+        // Store custom configuration
+        $this->customHeaders = $headers;
+        $this->transportOptions = $options;
+        
+        // Initialize XML-RPC client
         $this->xmlRpcClient = new Client($baseUri . '/xmlrpc/2/' . $service);
+        
+        // Configure SSL verification
         $this->xmlRpcClient->setSSLVerifyPeer($sslVerify);
         
-        // Configure client for XML-RPC
-        // Disable compression as it's not needed for most Odoo servers
-        $this->xmlRpcClient->setAcceptedCompression(null);
-        $this->xmlRpcClient->setRequestCompression(null);
+        // Apply custom headers if any
+        if (!empty($this->customHeaders)) {
+            $formattedHeaders = array_map(function ($key, $value) {
+                return "$key: $value";
+            }, array_keys($this->customHeaders), $this->customHeaders);
+            
+            $this->xmlRpcClient->setCurlOptions([
+                CURLOPT_HTTPHEADER => $formattedHeaders
+            ]);
+        }
+        
+        // Apply any additional transport options
+        if (!empty($this->transportOptions)) {
+            foreach ($this->transportOptions as $option => $value) {
+                if (method_exists($this->xmlRpcClient, $option)) {
+                    $this->xmlRpcClient->$option($value);
+                }
+            }
+        }
     }
 
     public function call(string $method, array $arguments)
     {
         try {
+            // Convert parameters, properly handling null values (allow_none=True)
             $params = array_map(function ($arg) {
+                if ($arg === null) {
+                    return new Value('nil', 'null');
+                }
                 return $this->convertToXmlRpcValue($arg);
             }, $arguments);
 
@@ -45,20 +79,7 @@ class XmlRpcClient extends AbstractRpcClient
 
             return $this->convertFromXmlRpcValue($response->value());
         } catch (\Exception $e) {
-            if ($e instanceof GuzzleException && $e->getCode() === 405) {
-                throw new OdooException(
-                    null,
-                    "XML-RPC endpoint not available. Please check if the Odoo server accepts XML-RPC connections and the endpoint URL is correct.",
-                    405,
-                    $e
-                );
-            }
-            throw new OdooException(
-                null,
-                "XML-RPC call failed: " . $e->getMessage(),
-                $e->getCode(),
-                $e
-            );
+            throw new OdooException(null, $e->getMessage(), $e->getCode(), $e);
         }
     }
 

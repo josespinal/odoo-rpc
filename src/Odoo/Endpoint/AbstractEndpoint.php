@@ -13,10 +13,12 @@ abstract class AbstractEndpoint
     public function __construct(protected Config $config)
     {
         $this->client = RpcClientFactory::create(
-            $config->getProtocol(),
-            $config->getHost(),
-            $this->getService(),
-            $config->getSslVerify()
+            protocol: $config->getProtocol(),
+            baseUri: $config->getHost(),
+            service: $this->getService(),
+            sslVerify: $config->getSslVerify(),
+            headers: $config->getHeaders(),
+            options: $config->getOptions()
         );
     }
 
