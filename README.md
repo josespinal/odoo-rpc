@@ -1,4 +1,4 @@
-# Access Odoo via JsonRPC or XML-RPC
+# Access Odoo via JSON-RPC and XML-RPC
 
 Connect to odoo via the json-rpc or xml-rpc api. If you are in a laravel project, this package registers a provider. But laravel is not required for this package.
 
@@ -7,14 +7,14 @@ Connect to odoo via the json-rpc or xml-rpc api. If you are in a laravel project
 You can install the package via composer:
 
 ```bash
-composer require obuchmann/odoo-jsonrpc
+composer require josespinal/odoo-rpc
 ```
 
 The service provider will automatically register itself if you are in a laravel project.
 
 You can publish the config file with:
 ```bash
-php artisan vendor:publish --provider="Obuchmann\OdooJsonRpc\OdooServiceProvider" --tag="config"
+php artisan vendor:publish --provider="JoseSpinal\OdooRpc\OdooServiceProvider" --tag="config"
 ```
 
 ## Usage
@@ -40,8 +40,8 @@ $config = new Config(
 ### Basic Usage
 
 ```php
-use Obuchmann\OdooJsonRpc\Odoo;
-use Obuchmann\OdooJsonRpc\Odoo\Request\Arguments\Domain;
+use JoseSpinal\OdooRpc\Odoo;
+use JoseSpinal\OdooRpc\Odoo\Request\Arguments\Domain;
 
 $this->host = 'http://localhost:8069';
 $this->username = 'admin';
@@ -111,7 +111,7 @@ $odoo->deleteById('res.partner', $myCompanyId);
 
 class Controller{
 
-    public function index(\Obuchmann\OdooJsonRpc\Odoo $odoo){
+    public function index(\JoseSpinal\OdooRpc\Odoo $odoo){
         // Find Model by Id
         $product = $odoo->find('product.template', 1);
         
@@ -151,6 +151,8 @@ Laravel Models are implemented with Attributes
 
 ```php
 #[Model('res.partner')]
+use JoseSpinal\OdooRpc\Odoo\OdooModel;
+
 class Partner extends OdooModel
 {
     #[Field]
@@ -193,10 +195,10 @@ Casts are global and can be registered in the Odoo class.
 ```php
 
 // The basic datetime cast
-\Obuchmann\OdooJsonRpc\Odoo::registerCast(new Odoo\Casts\DateTimeCast());
+\JoseSpinal\OdooRpc\Odoo::registerCast(new Odoo\Casts\DateTimeCast());
 
 // a datetime cast that respects the timezone
-\Obuchmann\OdooJsonRpc\Odoo::registerCast(new Odoo\Casts\DateTimeCast('Europe/Berlin'));
+\JoseSpinal\OdooRpc\Odoo::registerCast(new Odoo\Casts\DateTimeCast('Europe/Berlin'));
 
 
 // you can write custom casts by extending the Obuchmann\OdooJsonRpc\Odoo\Casts\Cast class
