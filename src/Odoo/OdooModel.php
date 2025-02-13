@@ -1,14 +1,13 @@
 <?php
 
-
 namespace JoseSpinal\OdooRpc\Odoo;
-
 
 use JoseSpinal\OdooRpc\Attributes\Model;
 use JoseSpinal\OdooRpc\Exceptions\ConfigurationException;
 use JoseSpinal\OdooRpc\Exceptions\OdooModelException;
 use JoseSpinal\OdooRpc\Exceptions\UndefinedPropertyException;
 use JoseSpinal\OdooRpc\Odoo;
+use JoseSpinal\OdooRpc\Odoo\Collections\OdooCollection;
 use JoseSpinal\OdooRpc\Odoo\Mapping\HasFields;
 
 class OdooModel
@@ -37,9 +36,10 @@ class OdooModel
         return static::hydrate($odooInstance);
     }
 
-    public static function read(array $ids): array
+    public static function read(array $ids): OdooCollection
     {
-        return array_map(fn($item) => static::hydrate($item), self::$odoo->read(static::model(), $ids, static::fieldNames()));
+        $items = array_map(fn($item) => static::hydrate($item), self::$odoo->read(static::model(), $ids, static::fieldNames()));
+        return new OdooCollection($items);
     }
 
     protected static function model()
@@ -59,6 +59,16 @@ class OdooModel
     public static function all()
     {
         return static::query()->get();
+    }
+
+    /**
+     * Get the first record matching the query.
+     *
+     * @return static|null
+     */
+    public static function first(): ?static
+    {
+        return static::query()->first();
     }
 
     public int $id;
