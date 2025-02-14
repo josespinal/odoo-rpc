@@ -11,10 +11,15 @@ class JsonRpcClient extends AbstractRpcClient
     public function __construct(string $baseUri, string $service = 'object', bool $sslVerify = true)
     {
         parent::__construct($baseUri, $service, $sslVerify);
+        
+        // Merge config headers with required Content-Type
+        $headers = array_merge(
+            ['Content-Type' => 'application/json'],
+            config('odoo.headers', [])
+        );
+        
         $this->client = new \GuzzleHttp\Client([
-            'headers' => [
-                'Content-Type' => 'application/json',
-            ],
+            'headers' => $headers,
             'base_uri' => $baseUri,
             'verify' => $sslVerify,
         ]);
