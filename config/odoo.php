@@ -51,7 +51,8 @@ return [
     */
     'headers' => [
         'User-Agent' => env('ODOO_USER_AGENT', 'PHP XML-RPC Client'),
-        'Accept' => env('ODOO_ACCEPT', '*/*'),
+        'Accept-Encoding' => env('ODOO_ACCEPT', 'gzip'),
+        'Content-Type' => 'text/xml',
         // Add more headers as needed
     ],
 
