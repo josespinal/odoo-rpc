@@ -18,6 +18,12 @@ class XmlRpcClient extends AbstractRpcClient
         parent::__construct($baseUri, $service, $sslVerify);
         $this->xmlRpcClient = new Client($baseUri . '/xmlrpc/2/' . $service);
         $this->xmlRpcClient->setOption(Client::OPT_VERIFY_PEER, $sslVerify);
+        
+        // Set headers from config
+        $headers = config('odoo.headers', []);
+        if (!empty($headers)) {
+            $this->xmlRpcClient->setOption(Client::OPT_EXTRA_HEADERS, $headers);
+        }
     }
 
     public function call(string $method, array $arguments)
