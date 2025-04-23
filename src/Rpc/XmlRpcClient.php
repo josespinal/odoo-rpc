@@ -2,28 +2,34 @@
 
 namespace JoseSpinal\OdooRpc\Rpc;
 
-use GuzzleHttp\Exception\GuzzleException;
-use JoseSpinal\OdooRpc\Exceptions\OdooException;
+use PhpXmlRpc\Value;
 use PhpXmlRpc\Client;
 use PhpXmlRpc\Request;
-use PhpXmlRpc\Value;
 use Psr\Http\Message\ResponseInterface;
+use GuzzleHttp\Exception\GuzzleException;
+use JoseSpinal\OdooRpc\Exceptions\OdooException;
 
 class XmlRpcClient extends AbstractRpcClient
 {
     private Client $xmlRpcClient;
 
-    public function __construct(string $baseUri, string $service = 'object', bool $sslVerify = true)
-    {
+    public function __construct(
+        string $baseUri,
+        string $service = 'object',
+        bool $sslVerify = true,
+        array $headers = []
+    ) {
         parent::__construct($baseUri, $service, $sslVerify);
-        $this->xmlRpcClient = new Client($baseUri . '/xmlrpc/2/' . $service);
+        $this->xmlRpcClient = new Client(path: $baseUri . "/xmlrpc/2/" . $service);
         $this->xmlRpcClient->setOption(Client::OPT_VERIFY_PEER, $sslVerify);
-        
-        // Set headers from config
-        $headers = config('odoo.headers', []);
+
         if (!empty($headers)) {
             $this->xmlRpcClient->setOption(Client::OPT_EXTRA_HEADERS, $headers);
         }
+
+        // $this->xmlRpcClient->setDebug(true); // Consider making debug configurable if needed
+
+        // print_r($this->xmlRpcClient);
     }
 
     public function call(string $method, array $arguments)
@@ -90,7 +96,7 @@ class XmlRpcClient extends AbstractRpcClient
             $type = $value->scalartyp();
             $val = $value->scalarval();
 
-            return match($type) {
+            return match ($type) {
                 'boolean' => (bool)$val,
                 'int' => (int)$val,
                 'double' => (float)$val,

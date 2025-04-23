@@ -3,9 +3,6 @@
 
 namespace JoseSpinal\OdooRpc\Odoo;
 
-use JetBrains\PhpStorm\Immutable;
-
-#[Immutable]
 class Config
 {
 
